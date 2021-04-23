@@ -3,11 +3,13 @@ import "../styles/Navbar.css";
 
 function Navbar() {
     return (
-        <nav className="navbar">
-      <a href="/">Home    </a>
-      <a href="/">Employee    </a>
-      <a href="/">Search History    </a>
-    </nav>
+      <Navbar className="bg-light justify-content-between">
+      <div inline>
+      </div>
+      <div inline>
+        <nav type="text" placeholder="Search" className=" mr-sm-2" />
+      </div>
+    </Navbar>
     )
 }
 
