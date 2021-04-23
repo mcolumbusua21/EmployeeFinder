@@ -3,24 +3,31 @@ import "./style.css";
 
 function EmployeeCard(props) {
   return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Occupation:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Location:</strong> {props.location}
-          </li>
-        </ul>
-      </div>
-    </div>
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">image</th>
+            <th scope="col">name</th>
+            <th scope="col">phone</th>
+            <th scope="col">email</th>
+            <th scope="col">DOB</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+          {employees.map(employee => {
+            return (
+              <tr>
+                <td><img src={employee.picture.medium}/></td>
+                <td>{employee.name.first}{employee.name.last}</td>
+                <td>{employee.phone}</td>
+                <td>{employee.email}</td>
+                <td>{employee.DOB}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+        </table>
   );
 }
 
