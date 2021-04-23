@@ -1,0 +1,17 @@
+.navbar {
+    background: rgb(0, 51, 128);
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .navbar a {
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin: 5px;
+    line-height: 3;
+    font-family: 'Original Surfer', cursive;
+    display: flex;
+    justify-content: flex-start;
+  }

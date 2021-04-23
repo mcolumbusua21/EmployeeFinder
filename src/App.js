@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Jumbotron from "./components/Jumbotron";
+import Tables from "./components/Tables";
+import Navbar from "./components/Navbar";
+import API from "./utils/API";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    employees: [],
+  };
+
+  componentDidMount() {
+    this.getEmployees();
+  }
+
+  getEmployees = async () => {
+    const { data } = await API.getUsers();
+    this.setState({ employees: data.results });
+  };
+
+  render() {
+   const { employees } = this.state;
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>DOB</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {employees.length === 0 ? (
+            <h2>NO EMPLOYEES</h2>
+          ) : (
+            employees
+            .filter(this.filterEmployees)
+            .map((employee) => <EmployeeRow {...employee} />)
+            )}
+        </tbody>
+      </table>
+    )
+  }
 }
 
 export default App;
