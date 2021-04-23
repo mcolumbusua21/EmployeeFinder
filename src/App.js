@@ -1,12 +1,11 @@
 import React from "react";
-import Jumbotron from "./components/Jumbotron";
 import Tables from "./components/Tables";
-import Navbar from "./components/Navbar";
 import API from "./utils/API";
 
 class App extends React.Component {
   state = {
     employees: [],
+    searched: []
   };
 
   componentDidMount() {
@@ -28,7 +27,6 @@ class App extends React.Component {
   render() {
    const { employees } = this.state;
     return (
-     
         <tbody>
           {employees.length === 0 ? (
             <h2>NO EMPLOYEES</h2>
@@ -38,7 +36,6 @@ class App extends React.Component {
             .map((employee) => <Tables {...employee} />)
             )}
         </tbody>
-      </table>
     )
   }
 }
