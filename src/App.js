@@ -27,15 +27,7 @@ class App extends React.Component {
   render() {
    const { employees } = this.state;
     return (
-        <tbody>
-          {employees.length === 0 ? (
-            <h2>NO EMPLOYEES</h2>
-          ) : (
-            employees
-            .filter(this.filterEmployees)
-            .map((employee) => <Tables {...employee} />)
-            )}
-        </tbody>
+  
     )
   }
 }
