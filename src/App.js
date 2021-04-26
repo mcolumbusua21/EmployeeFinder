@@ -1,6 +1,8 @@
 import React from "react";
 import API from "./utils/API";
 import Navbar from "./components/Navbar"
+import Jumbotron from "./components/Jumbotron"
+import EmployeeCard from "./components/EmployeeCard/index"
 
 class App extends React.Component {
   state = {
@@ -30,14 +32,15 @@ class App extends React.Component {
     const value = e.target.value.toLowerCase();
     const searchedArr = this.state.employees.filter(employee => employee.name.first.toLowerCase().startsWith(value))
     this.setState({
-      searched: searchedArr,
+      searched: searchedArr, 
     });
   };
   
 
   render() {
     return (
-      { Navbar }
+      this.setState({Navbar, Jumbotron})
+     
     )
   }
 }
