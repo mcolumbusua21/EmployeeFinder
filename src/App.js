@@ -1,7 +1,7 @@
 import React from "react";
 import API from "./utils/API";
-import Navbar from "./components/Navbar"
-import Jumbotron from "./components/Jumbotron"
+// import Navbar from "./components/Navbar"
+// import Jumbotron from "./components/Jumbotron"
 import EmployeeCard from "./components/EmployeeCard/index"
 
 class App extends React.Component {
@@ -35,14 +35,33 @@ class App extends React.Component {
       searched: searchedArr, 
     });
   };
-  
-
   render() {
+    console.log(this.state);
     return (
-      this.setState({Navbar, Jumbotron})
-     
+      <div>
+      <nav className="navbar navbar-light bg-info">
+        <div className="container-fluid justify-content-center">
+          <span className="title h1">Employee Directory</span>
+        </div>
+      </nav>
+  
+      <input
+        name="searchText"
+        type="search"
+        placeholder="Search by name"
+        className="form-control"
+        id="search"
+        onChange={this.handleInputChange}
+      />
+  
+      <button className="btn btn-success" onClick={this.handleSort}>Sort alphabetically</button>
+  
+      <EmployeeCard users={this.state.searched} />
+      </div>
     )
   }
+
+
 }
 
 export default App;

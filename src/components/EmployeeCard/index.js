@@ -18,7 +18,7 @@ function EmployeeCard(props) {
           return (
             <tr>
               <td>
-                <img src={employee.picture.medium} />
+                <img src={employee.picture.medium} alt="pics"/>
               </td>
               <td>
                 {employee.name.first}
