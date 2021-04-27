@@ -52,13 +52,14 @@ mcolumbusua21@gmail.com
 github.com/mcolumbusua21
 
 ## Link 
-
+https://technastydirectory.netlify.app/
 
 ## Usage 
 It allows an employer to search through their employees. They can search by first and last name.
 
 ## Photo
 
+![Screen Shot 2021-04-27 at 11 00 43 AM](https://user-images.githubusercontent.com/78819536/116289821-aeacaa00-a747-11eb-8f89-59f93926aa63.png)
 
 
 ## Questions
