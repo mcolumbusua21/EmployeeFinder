@@ -40,7 +40,7 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div>
-      <nav className="navbar navbar-light bg-info">
+      <nav className="bg-light justify-content-between">
         <div className="container-fluid justify-content-center">
           <span className="title h1"> TechNasty Employee Directory</span>
         </div>
