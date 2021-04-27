@@ -1,8 +1,8 @@
 import React from "react";
 import API from "./utils/API";
-// import Navbar from "./components/Navbar"
-// import Jumbotron from "./components/Jumbotron"
 import EmployeeCard from "./components/EmployeeCard/index"
+
+
 
 class App extends React.Component {
   state = {
@@ -11,8 +11,9 @@ class App extends React.Component {
   };
 
    async componentDidMount() {
-     const { empData } = await API.getUsers();
-      this.setState({ employee: empData.results, searched: empData.results });
+     const {data} = await API.getUsers();
+     console.log(data)
+      this.setState({ employee: data.results, searched: data.results });
   };
 
 
@@ -30,7 +31,7 @@ class App extends React.Component {
   
   handleInputChange = e => {
     const value = e.target.value.toLowerCase();
-    const searchedArr = this.state.employees.filter(employee => employee.name.first.toLowerCase().startsWith(value))
+    const searchedArr = this.state.employee.filter(employee => employee.name.first.toLowerCase().startsWith(value))
     this.setState({
       searched: searchedArr, 
     });
@@ -41,7 +42,7 @@ class App extends React.Component {
       <div>
       <nav className="navbar navbar-light bg-info">
         <div className="container-fluid justify-content-center">
-          <span className="title h1">Employee Directory</span>
+          <span className="title h1"> TechNasty Employee Directory</span>
         </div>
       </nav>
   
@@ -54,9 +55,9 @@ class App extends React.Component {
         onChange={this.handleInputChange}
       />
   
-      <button className="btn btn-success" onClick={this.handleSort}>Sort alphabetically</button>
+      <button className="btn btn-success" onClick={this.handleSort}>Search</button>
   
-      <EmployeeCard users={this.state.searched} />
+      <EmployeeCard users={this.state.searched}  />
       </div>
     )
   }

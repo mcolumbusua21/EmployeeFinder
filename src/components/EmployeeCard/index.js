@@ -14,9 +14,9 @@ function EmployeeCard(props) {
         </tr>
       </thead>
       <tbody>
-        {props.map((employee) => {
+        {props.users.map((employee) => {
           return (
-            <tr>
+            <tr key={employee.login.uuid}>
               <td>
                 <img src={employee.picture.medium} alt="pics"/>
               </td>
@@ -26,7 +26,7 @@ function EmployeeCard(props) {
               </td>
               <td>{employee.phone}</td>
               <td>{employee.email}</td>
-              <td>{employee.DOB.date.slice(0,10)}</td>
+              <td>{employee.dob.date.slice(0,10)}</td>
             </tr>
           );
         })}
